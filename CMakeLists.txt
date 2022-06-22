@@ -32,8 +32,6 @@ if(Boost_FOUND)
 	target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 endif()
 
-
-
-
-
-
+if(MINGW)
+  target_link_libraries(${PROJECT_NAME} ws2_32)
+endif()
