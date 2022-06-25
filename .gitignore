@@ -17,6 +17,9 @@ _deps
 # VSCode Ignore
 .vscode
 
+# Clang-format ignore
+.clang-format
+
 # Prerequisites
 *.d
 

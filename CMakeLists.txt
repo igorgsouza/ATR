@@ -10,6 +10,7 @@ message("--- Building Project ---")
 #C++ Standard version
 set(CMAKE_CXX_STANDARD 20)
 
+
 ### Searches for the VCPKG
 if(DEFINED ENV{VCPKG_ROOT})
 	set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
