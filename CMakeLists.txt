@@ -10,7 +10,6 @@ message("--- Building Project ---")
 #C++ Standard version
 set(CMAKE_CXX_STANDARD 20)
 
-
 ### Searches for the VCPKG
 if(DEFINED ENV{VCPKG_ROOT})
 	set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
@@ -35,9 +34,7 @@ if(Boost_FOUND)
 	target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 endif()
 
-if(MINGW)
-  target_link_libraries(${PROJECT_NAME} ws2_32)
-endif()
+
 
 include_directories(include)
 
@@ -46,3 +43,10 @@ link_directories(src)
 add_subdirectory(src)
 
 target_link_libraries(${PROJECT_NAME} atr_lib)
+
+get_target_property(OUT ${PROJECT_NAME} LINK_LIBRARIES)
+message(STATUS ${OUT})
+
+if(MSVC OR MSYS OR MINGW)
+	target_link_libraries(${PROJECT_NAME} ws2_32)
+endif()

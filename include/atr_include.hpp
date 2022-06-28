@@ -1,13 +1,13 @@
+#include <boost/asio.hpp>
 #include <chrono>
 #include <iostream>
 #include <math.h>
 #include <mutex>
 #include <thread>
 #include <tuple>
+#include <type_traits>
 #include <vector>
 
-
-#include <boost/asio.hpp>
 
 #define _USE_MATH_DEFINES
 

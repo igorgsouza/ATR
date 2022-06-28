@@ -6,13 +6,12 @@ class PI
 	double proportional_gain;
 	double integral_gain;
 
-	double prev_error = 0;
-	double prev_integral = 0;
+	double prev_error;
+	double prev_integral;
 
   public:
-	PI(double, double);
 	PI();
+	PI(double, double);
 	~PI();
-
 	double signal(double, double);
 };
